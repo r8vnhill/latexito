@@ -97,6 +97,10 @@ For now I'm just gonna include the code in the README.
 \newcommand{\docSubtitle}{Towards A Discipline Of Experimental Algorithmics}
 
 \begin{document}
-  \renderTitle[\docSubtitle]{\docTitle}
+  \begin{center}
+    \renderTitle[\docSubtitle]{\docTitle}
+  \end{center}
 \end{document}
 ```
+
+![](https://i.imgur.com/VszRfIK.png)
