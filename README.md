@@ -88,13 +88,13 @@ For now I'm just gonna include the code in the README.
 ```
 ### Usage
 ```latex
-%% Reference to the title of the document
+\title{Lectura 2}
+\newcommand{\docSubtitle}{Towards A Discipline Of Experimental Algorithmics}
+
+%% We create a `docTitle` variable that references the document's title
 \makeatletter
 \let\docTitle\@title
 \makeatother
-
-\title{Lectura 2}
-\newcommand{\docSubtitle}{Towards A Discipline Of Experimental Algorithmics}
 
 \begin{document}
   \begin{center}
