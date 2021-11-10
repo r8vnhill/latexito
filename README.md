@@ -52,7 +52,51 @@ For now I'm just gonna include the code in the README.
 \newcommand{\city}{Santiago}
 \newcommand{\country}{Chile}
 
-\renderHeader{\logo}{\courseID}{\courseName}{\city}{\country}
+\begin{document}
+  \renderHeader{\logo}{\courseID}{\courseName}{\city}{\country}
+  ...
+\end{document}
 ```
 
 ![](https://i.imgur.com/eo7MVU9.png)
+
+## Title with optional subtitle
+```latex
+% | The package’s basic command is \ifthenelse, which can use a wide array of tests. Also provided 
+% | is a simple loop command \whiledo.
+% | Ifthen is a separate package within the LATEX distribution; while it will always be present in a
+% | LATEX distribution, a \usepackage command is always needed to load it.
+\usepackage{ifthen}
+
+% | Renders the document title with an optional subtitle
+% | Arguments:
+% |   #1 (optional) - The document's subtitle
+% |   #2 - The document's title
+\newcommand{\renderTitle}[2][]{
+  % The notation [2][] indicates that this command receives 2 arguments, the first one being 
+  % optional taking the [] (empty) value as default.
+  {\Large
+    \textbf{#2} \\
+    \ifthenelse{\equal{#1}{}}{
+      % No subtitle given
+      \vspace{4pt}
+    }{
+      \textit{#1} \\
+    }
+  }
+}
+```
+### Usage
+```latex
+%% Reference to the title of the document
+\makeatletter
+\let\docTitle\@title
+\makeatother
+
+\title{Lectura 2}
+\newcommand{\docSubtitle}{Towards A Discipline Of Experimental Algorithmics}
+
+\begin{document}
+  \renderTitle[\docSubtitle]{\docTitle}
+\end{document}
+```
