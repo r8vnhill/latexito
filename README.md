@@ -22,7 +22,7 @@ For now I'm just gonna include the code in the README.
   \begin{minipage}{0.59\textwidth}
     \begin{flushright}
       \textsc{#1\ - #2} \\
-      \fecha \\
+      \today \\
       \small{\textit{#3, #4}}
     \end{flushright}
     \vspace{-0.45cm}
@@ -46,7 +46,6 @@ For now I'm just gonna include the code in the README.
 ```
 ### Usage:
 ```latex
-\newcommand{\subtitulo}{Towards A Discipline Of Experimental Algorithmics}
 \newcommand{\courseID}{CC5502}
 \newcommand{\courseName}{Geometría computacional}
 \newcommand{\logo}{LogoDCC.pdf}
